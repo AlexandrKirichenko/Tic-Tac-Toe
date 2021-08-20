@@ -15,9 +15,9 @@
     line-height: 90px;
     font-style: normal;
     text-decoration: none;
+    &:hover {
+        background: var(--color-onhover);
+        transition: .3s all ease;
+    }
 }
 
-.square:hover {
-    background: var(--color-onhover);
-    transition: .3s all ease;
-}
