@@ -1,10 +1,10 @@
 import React from 'react';
 import './Square.css';
 
-const Square = ({onClick, value}) => {
+const Square = ({handleBtnClick}) => {
     return (
-        <button className="square" onClick={onClick}>
-            {value}
+        <button className="square" onClick={handleBtnClick}>
+            X
         </button>
     )
 }
