@@ -1,0 +1,23 @@
+.square {
+    width: 153px;
+    height: 153px;
+    background: var(--color-square);
+    border: 3px solid #fff;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-size: 96px;
+    line-height: 90px;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.square:hover {
+    background: var(--color-onhover);
+    transition: .3s all ease;
+}
