@@ -9,7 +9,6 @@ const Game = () => {
     const [board, setBoard] = useState(Array(9).fill(null))
     const [player, setPlayer] = useState(true);
     const [isDraw, setIsDraw] = useState (false);
-    // const winner = useMemo (()=>calculateWinner(board), [board] );
     const [winner, setWinner] = useState(null);
     
     useEffect(() => {
@@ -44,8 +43,6 @@ const Game = () => {
         setIsDraw(false);
     }
     
-    
-
     return (
         <div className="wrapper">
             <Board squares={board} click={handleClick}/>
