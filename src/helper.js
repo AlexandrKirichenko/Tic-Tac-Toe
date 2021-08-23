@@ -17,3 +17,13 @@ export function calculateWinner(squares) {
     }
     return null
 }
+
+export const isBoardFull = (board) => {
+    let flag = 0;
+    for (let i=  0; i<9; i++) {
+        if (board[i]) {
+            flag++;
+        }
+    }
+    return flag===9;
+}
