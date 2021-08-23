@@ -1,38 +1,43 @@
-import React, {useState} from 'react'
+import React, {useState, useMemo} from 'react'
 import Board from '../Board/Board'
 import {calculateWinner} from '../../helper'
-
+import Winner from '../Winner/Winner'
 import './Game.scss'
 
 
 const Game = () => {
     const [board, setBoard] = useState(Array(9).fill(null))
     const [xIsNext, setXIsNext] = useState(true)
-    const winner = calculateWinner(board)
+    const winner = useMemo (()=>calculateWinner(board), [board] );
     
     const handleClick = (index) => {
+        if(board[index]) {
+            alert('Ячейка занята')
+        }
         const boardCopy = [...board]
-        // Определяю был ли клик по ячейке или игра закончилась
-        if (winner || boardCopy[index]) return   //т.к. по умолчанию массив пустой
-        // Определить чей ход
+        if (winner || boardCopy[index]) return
+        let flag = false
+        for (let i = 0; i<9; i++) {
+            flag   =  !Boolean(boardCopy[i]);
+        }
+        if (!flag) {
+            alert('Nichya')
+        }
+        
         boardCopy[index] = xIsNext ? 'X' : 'O'
-        //Обновление стейта
         setBoard(boardCopy)
         setXIsNext(!xIsNext)
     }
     
-    const startNewGame = () => {
-        return (
-            <button className="start__btn" onClick={() => setBoard(Array(9).fill(null))}> Очистить поле</button>
-        )
-    }
+    // const startNewGame = () => {
+    //     return (
+    //         <button className="start__btn" onClick={() => setBoard(Array(9).fill(null))}> Play again</button>
+    //     )
+    // }
     return (
         <div className="wrapper">
             <Board squares={board} click={handleClick}/>
-            <p className="game__info">
-                {winner ? 'Player ' + winner + ' Win' : 'Step for ' + ( xIsNext ? 'X' : 'O')}
-            </p>
-            {startNewGame()}
+                {winner ? <Winner winner={winner} /> : null}
         </div>
     
     )
