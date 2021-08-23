@@ -1,16 +1,10 @@
 import React from 'react';
 import './App.scss';
-import Square from './components/Square/Square'
+import Game from './components/Game/Game'
 
 function App() {
-    const  handleBtnClick = (value) => {
-        console.log('pressed', value)
-    }
-    
   return (
-    <>
-        <Square handleBtnClick={handleBtnClick}/>
-    </>
+        <Game />
   );
 }
 
