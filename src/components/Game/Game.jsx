@@ -31,7 +31,7 @@ const Game = () => {
         // }
         const boardCopy = [...board]
         if (winner || boardCopy[index]) return
-
+        
         boardCopy[index] = player ? 'X' : 'O'
         setBoard(boardCopy)
         setPlayer(!player)
@@ -46,9 +46,9 @@ const Game = () => {
     const disableColor = Boolean(winner || isDraw)
     return (
         <div className="wrapper">
-            <Move player={player}/>
-            <Board squares={board} click={handleClick} disableColor={disableColor ? 'all-gray-color': ' '}/>
-                {winner || isDraw ? <Winner winner={winner}  isDraw={isDraw} btnClk={btnClk}/> : null}
+            <Move player={player} disableColor={disableColor}/>
+            <Board squares={board} click={handleClick} disableColor={disableColor}/>
+            {winner || isDraw ? <Winner winner={winner}  isDraw={isDraw} btnClk={btnClk}/> : null}
         </div>
     
     )

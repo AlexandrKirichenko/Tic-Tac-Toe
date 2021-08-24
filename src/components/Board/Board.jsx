@@ -7,8 +7,9 @@ const Board = ({squares, click, disableColor}) => {
         <div className="board">
             {
                 squares.map((square, i) => (
-                    <Square key={i} value={square} onClick={() => click(i)} disable = { Boolean( squares[i] ) } />
-                        ))
+                    <Square key={i} value={square} onClick={() => click(i)}
+                            disable={Boolean(squares[i])} disableColor= {disableColor}/>
+                ))
             }
         </div>
     );
