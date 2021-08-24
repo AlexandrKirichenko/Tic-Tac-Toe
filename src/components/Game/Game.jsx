@@ -33,7 +33,6 @@ const Game = () => {
  
         const boardCopy = [...board]
         if (winner || boardCopy[index]) return
-        console.log(getApponent('X'))
         boardCopy[index]=getApponent(player);
         setBoard(boardCopy)
         setPlayer(getApponent(player))
