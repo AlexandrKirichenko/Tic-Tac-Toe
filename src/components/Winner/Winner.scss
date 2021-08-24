@@ -11,7 +11,7 @@
     
   & .wrap-internal {
     display: flex;
-    padding: 50px;
+    //padding: 50px;
     flex-direction: column;
     font-size: 48px;
     font-style: normal;
@@ -20,6 +20,9 @@
     justify-content: center;
     align-items: center;
     z-index: 999;
+    .winner {
+      background: var(--color-square);
+    }
     & > div:first-child {
       margin-right: 30px;
     }

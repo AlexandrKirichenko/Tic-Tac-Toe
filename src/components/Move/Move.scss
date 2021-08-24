@@ -1,0 +1,31 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  ////justify-content: revert;
+  position: relative;
+  .move_dsc {
+    font-size: 36px;
+    font-style: normal;
+    text-decoration: none;
+    text-align: left;
+  }
+}
+
+.btn__line {
+  //position: absolute;
+  z-index: 500;
+  height: 10px;
+  width: 65px;
+  background: var(--color-square);
+  margin: 0 20px;
+  &_round {
+    position: absolute;
+    z-index: 1000;
+    height: 21px;
+    width: 21px;
+    border-radius: 50%;
+    background: var(--color-square);
+  }
+}
+
+

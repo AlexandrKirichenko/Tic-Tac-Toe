@@ -3,6 +3,7 @@ import Board from '../Board/Board'
 import {calculateWinner,isBoardFull} from '../../helper'
 import Winner from '../Winner/Winner'
 import './Game.scss'
+import Move from '../Move/Move'
 
 
 const Game = () => {
@@ -25,9 +26,9 @@ const Game = () => {
     }, [board]);
     
     const handleClick = (index) => {
-        if(board[index]) {
-            alert('Ячейка занята')
-        }
+        // if(board[index]) {
+        //     alert('Ячейка занята')
+        // }
         const boardCopy = [...board]
         if (winner || boardCopy[index]) return
 
@@ -42,10 +43,11 @@ const Game = () => {
         setWinner(null);
         setIsDraw(false);
     }
-    
+    const disableColor = Boolean(winner || isDraw)
     return (
         <div className="wrapper">
-            <Board squares={board} click={handleClick}/>
+            <Move player={player}/>
+            <Board squares={board} click={handleClick} disableColor={disableColor ? 'all-gray-color': ' '}/>
                 {winner || isDraw ? <Winner winner={winner}  isDraw={isDraw} btnClk={btnClk}/> : null}
         </div>
     
