@@ -3,7 +3,7 @@ import './Square.scss';
 
 const Square = ({onClick, value, disable, disableColor}) => {
     return (
-        <button className="square" onClick={onClick} disable={disable} disableColor={disableColor}>
+        <button className={`square ${disableColor ? '.color-black' : '.color-gray ' }` } onClick={onClick} disable={disable} disableColor={disableColor}>
             {value}
         </button>
     )
