@@ -1,0 +1,32 @@
+@import '../../constants';
+
+.square {
+    width: 153px;
+    height: 153px;
+    background: $color-square;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-size: 96px;
+    line-height: 90px;
+    font-style: normal;
+    text-decoration: none;
+    &:hover {
+        background: $color-onhover;
+        transition: .3s all ease;
+    }
+}
+
+.color-gray {
+    color: $color-grey;
+    
+}
+
+.background-color {
+    background-color: $color-bgsquare;
+}

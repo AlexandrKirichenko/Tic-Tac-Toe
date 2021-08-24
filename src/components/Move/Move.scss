@@ -1,0 +1,42 @@
+@import '../../constants';
+
+.wraper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 0 0 420px;
+  .move_dsc {
+    font-size: 36px;
+    font-style: normal;
+    text-decoration: none;
+    text-align: left;
+  }
+}
+.left {
+  left: 30px
+}
+
+.right{
+  left: 99px
+}
+
+
+.btn__line {
+  z-index: 500;
+  height: 10px;
+  width: 65px;
+  background: $color-square;
+  margin: 0 20px;
+  &_round {
+    position: absolute;
+    z-index: 1000;
+    height: 21px;
+    width: 21px;
+    border-radius: 50%;
+    background: $color-square;
+  }
+}
+
+.opacity-20 {
+  opacity: 0.2;
+}
