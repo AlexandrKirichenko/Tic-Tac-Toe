@@ -1,11 +1,9 @@
 import React from 'react';
 import './Square.scss';
-import '../../_constants.scss'
 
-const Square = ({onClick, value, disable, disableColor}) => {
-    console.log(disableColor);
+const Square = ({onClick, value, disableColor}) => {
     return (
-        <button className={`square ${disableColor ? 'color-gray' : 'color-black' }` } onClick={onClick} disable={disable} >
+        <button className={`square ${disableColor ? 'color-gray background-color' : ' ' }` } onClick={onClick} disable={!value} >
             {value}
         </button>
     )

@@ -1,9 +1,10 @@
+@import '../../constants';
+
 .wraper {
   display: flex;
   align-items: center;
-  ////justify-content: revert;
   position: relative;
-  margin: 0 0 0 400px;
+  margin: 0 0 0 420px;
   .move_dsc {
     font-size: 36px;
     font-style: normal;
@@ -11,13 +12,20 @@
     text-align: left;
   }
 }
+.left {
+  left: 30px
+}
+
+.right{
+  left: 99px
+}
+
 
 .btn__line {
-  //position: absolute;
   z-index: 500;
   height: 10px;
   width: 65px;
-  background: var(--color-square);
+  background: $color-square;
   margin: 0 20px;
   &_round {
     position: absolute;
@@ -25,7 +33,10 @@
     height: 21px;
     width: 21px;
     border-radius: 50%;
-    background: var(--color-square);
+    background: $color-square;
   }
 }
 
+.opacity-20 {
+  opacity: 0.2;
+}
